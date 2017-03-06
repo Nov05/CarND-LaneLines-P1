@@ -60,3 +60,9 @@ A browser window will appear showing the contents of the current directory.  Cli
 3. P1.html (if it is downloaded with the .mp4 files, the annotated videos can be viewed in this file)
 
 4. white.mp4, yellow.mp4, extra.mp4 (the test result videos)
+
+## Pipeline description
+
+## Shortcomings
+
+## Improvement suggestion
