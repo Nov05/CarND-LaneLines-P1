@@ -11897,7 +11897,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x209b635ccc0&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x26d24b7dbe0&gt;</pre>
 </div>
 
 </div>
@@ -13675,7 +13675,7 @@ EP1W22pbbavdw9v/B48rs7cxFkAbAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Build your pipeline that will draw lane lines on the test_images</span>
@@ -13715,7 +13715,11 @@ EP1W22pbbavdw9v/B48rs7cxFkAbAAAAAElFTkSuQmCC
     <span class="c1">#plt.imshow(line_image)</span>
     
     <span class="n">combo</span> <span class="o">=</span> <span class="n">weighted_img</span><span class="p">(</span><span class="n">line_image</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">α</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">β</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">λ</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+    <span class="n">img_output</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;_01.jpg&quot;</span><span class="p">)</span>
+    <span class="c1">#print(img_output)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">combo</span><span class="p">)</span>
+    <span class="c1">#plt.savefig(img_output, bbox_inches=&#39;tight&#39;)</span>
+    <span class="n">mpimg</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">img_output</span><span class="p">,</span> <span class="n">combo</span><span class="p">)</span>
     
 <span class="n">lane_detection</span><span class="p">(</span><span class="s1">&#39;test_images/solidWhiteCurve.jpg&#39;</span><span class="p">)</span>
 </pre></div>
@@ -15148,7 +15152,7 @@ YII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_detection</span><span class="p">(</span><span class="s1">&#39;test_images/solidWhiteRight.jpg&#39;</span><span class="p">)</span>
@@ -16700,7 +16704,7 @@ m7Zpm7ZpF3nbIPpN27RN27SLvG0Q/aZt2qZt2kXeNoh+0zZt0zbtIm8bRL9pm7Zpm3aRtw2i37RN
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_detection</span><span class="p">(</span><span class="s1">&#39;test_images/solidYellowCurve.jpg&#39;</span><span class="p">)</span>
@@ -18207,7 +18211,7 @@ Oqf/H99Sc3WrcCxKAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_detection</span><span class="p">(</span><span class="s1">&#39;test_images/solidYellowCurve2.jpg&#39;</span><span class="p">)</span>
@@ -19929,7 +19933,7 @@ kiNcVop+JStZyUqOcFkp+pWsZCUrOcJlpehXspKVrOQIl5WiX8lKVrKSI1xWin4lK1nJSo5w+b88
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_detection</span><span class="p">(</span><span class="s1">&#39;test_images/solidYellowLeft.jpg&#39;</span><span class="p">)</span>
@@ -21403,7 +21407,7 @@ W7rM6f8BZoQkLp/6uYgAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_detection</span><span class="p">(</span><span class="s1">&#39;test_images/whiteCarLaneSwitch.jpg&#39;</span><span class="p">)</span>
@@ -22957,7 +22961,7 @@ QmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Build your pipeline that will draw lane lines on the test_images</span>
@@ -23119,7 +23123,11 @@ QmCC
     <span class="c1">#plt.imshow(line_image)</span>
     
     <span class="n">combo</span> <span class="o">=</span> <span class="n">weighted_img</span><span class="p">(</span><span class="n">line_image</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">α</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">β</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">λ</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+    <span class="n">img_output</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;_02.jpg&quot;</span><span class="p">)</span>
+    <span class="c1">#print(img_output)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">combo</span><span class="p">)</span>
+    <span class="c1">#plt.savefig(img_output, bbox_inches=&#39;tight&#39;)</span>
+    <span class="n">mpimg</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span><span class="n">img_output</span><span class="p">,</span> <span class="n">combo</span><span class="p">)</span>
     
 <span class="n">lane_drawing</span><span class="p">(</span><span class="s1">&#39;test_images/solidWhiteCurve.jpg&#39;</span><span class="p">)</span>
 </pre></div>
@@ -24555,7 +24563,7 @@ AABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_drawing</span><span class="p">(</span><span class="s1">&#39;test_images/solidWhiteRight.jpg&#39;</span><span class="p">)</span>
@@ -26110,7 +26118,7 @@ N23TNm3THubt/wMoIWN6iAljHAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_drawing</span><span class="p">(</span><span class="s1">&#39;test_images/solidYellowCurve.jpg&#39;</span><span class="p">)</span>
@@ -27622,7 +27630,7 @@ AAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_drawing</span><span class="p">(</span><span class="s1">&#39;test_images/solidYellowCurve2.jpg&#39;</span><span class="p">)</span>
@@ -29346,7 +29354,7 @@ ohUd47Ri9Cta0YpWdIzTitGvaEUrWtExTitGv6IVrWhFxzitGP2KVrSiFR3jtGL0K1rRilZ0jNOK
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_drawing</span><span class="p">(</span><span class="s1">&#39;test_images/solidYellowLeft.jpg&#39;</span><span class="p">)</span>
@@ -30827,7 +30835,7 @@ tGP0O9rRjnb0PKf/D3M4MzWbOGknAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">lane_drawing</span><span class="p">(</span><span class="s1">&#39;test_images/whiteCarLaneSwitch.jpg&#39;</span><span class="p">)</span>
