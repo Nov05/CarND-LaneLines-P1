@@ -51,3 +51,12 @@ A browser window will appear showing the contents of the current directory.  Cli
 
 **Step 3:** Complete the project and submit both the Ipython notebook and the project writeup
 
+## Files submitted by Wenjing Liu
+
+1. README.md (writeup, including project instructin, file list, pipeline description, shortcoming description, improvement suggestion, etc., can be found in this file)
+
+2. P1.ipynb (code and .jpg test result pictures can be found in this file)
+
+3. P1.html (if it is downloaded with the .mp4 files, the annotated videos can be viewed in this file)
+
+4. white.mp4, yellow.mp4, extra.mp4 (the test result videos)
