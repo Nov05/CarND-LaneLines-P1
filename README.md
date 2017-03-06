@@ -61,8 +61,8 @@ A browser window will appear showing the contents of the current directory.  Cli
 
 4. white.mp4, yellow.mp4, extra.mp4 (the test result videos)
 
-## Pipeline description
+## Pipeline description by Nov05
 
-## Shortcomings
+## Shortcomings identified by Nov05
 
-## Improvement suggestion
+## Improvement suggested by Nov05
