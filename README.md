@@ -57,7 +57,7 @@ A browser window will appear showing the contents of the current directory.  Cli
 2. P1.ipynb (code and .jpg test result pictures can be found in this file)
 3. P1.html (if it is downloaded with the .mp4 files, the annotated videos can be viewed in this file)
 4. Picture files ending with _01.jpg, _02.jpg (test pictures with annotation)
-5. white.mp4, yellow.mp4, extra.mp4 (the test result videos)
+5. Test result videos files (videos with annotations): white.mp4, yellow.mp4, extra.mp4
 
 ## Pipeline description by Nov05
 ### The pipeline contains 6 steps:
@@ -71,8 +71,7 @@ A browser window will appear showing the contents of the current directory.  Cli
 ### There are 3 stages to build the pipeline:
 1. lane_detection() - make sure the lane lines can be detected and marked with line segments.
 <img src="test_images/solidWhiteCurve_01.jpg" width="480" alt="Image - Lane Detection"/>
-2. lane_drawing() - change the draw_lines() to draw_lines_average(), in which the line segments are averaged/extrapolated to map out the full extent of the lanes. 
-* 2.1 In this step, I used position and slope to differenciate the segments into two groups: one for the left lane, the other for the right lane. If the start point and the end point's x-coordiates are less than (picture width/2 + 20), the slope is in range (-1, -0.6), the segment belongs to the left lane; if the start point and the end point's x-coordinates are larger than (picture width/2 - 20), the slope is in range (0.5, 1), the segment belongs to the right lane.
+2. lane_drawing() - change the draw_lines() to draw_lines_average(), in which the line segments are averaged/extrapolated to map out the full extent of the lanes. In this step, I used position and slope to differenciate the segments into two groups: one for the left lane, the other for the right lane. If the start point and the end point's x-coordiates are less than (picture width/2 + 20), the slope is in range (-1, -0.6), the segment belongs to the left lane; if the start point and the end point's x-coordinates are larger than (picture width/2 - 20), the slope is in range (0.5, 1), the segment belongs to the right lane.
 <img src="test_images/solidWhiteCurve_02.jpg" width="480" alt="Image - Lane Drawing"/>
 3. Improve the draw_lines_average() function to get better results.
 
