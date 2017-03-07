@@ -54,15 +54,33 @@ A browser window will appear showing the contents of the current directory.  Cli
 ## List of files submitted by Nov05
 
 1. README.md (writeup, including project instructin, file list, pipeline description, shortcoming description, improvement suggestion, etc., can be found in this file)
-
 2. P1.ipynb (code and .jpg test result pictures can be found in this file)
-
 3. P1.html (if it is downloaded with the .mp4 files, the annotated videos can be viewed in this file)
-
-4. white.mp4, yellow.mp4, extra.mp4 (the test result videos)
+4. Picture files ending with _01.jpg, _02.jpg (test pictures with annotation)
+5. white.mp4, yellow.mp4, extra.mp4 (the test result videos)
 
 ## Pipeline description by Nov05
+### The pipeline contains 6 steps:
+1. grayscale() - change a color picture into a grayscale one.
+2. gaussian_blur() - use Gaussian Blur reduce noises.
+3. canny() - use Canny function to detect edges in the picture.
+4. region_of_interest() - apply a quadrilateral mask to the picture to locate the lane line edges.
+5. hough_lines() - apply Hough transform to draw lane lines on a blank the same size as our image.
+6. weighted_img() - add the lane lines to our original image.
+
+### There are 3 stages to build the pipeline:
+1. lane_detection() - make sure the lane lines can be detected and marked with line segments.
+2. lane_drawing() - change the draw_lines() to draw_lines_average(), in which the line segments are averaged/extrapolated to map out the full extent of the lanes. 
+* 2.1 In this step, I used position and slope to differenciate the segments into two groups: one for the left lane, the other for the right lane. If the start point and the end point's x-coordiates are less than (picture width/2 + 20), the slope is in range (-1, -0.6), the segment belongs to the left lane; if the start point and the end point's x-coordinates are larger than (picture width/2 - 20), the slope is in range (0.5, 1), the segment belongs to the right lane.
+3. Improve the draw_lines_average() function to get better results.
+
+### Once finished the pipeline, apply it to the test videos, and keep turing parameters and the draw_lines()/draw_lines_average() function to get better results.
 
 ## Shortcomings identified by Nov05
+1. The mask area is fixed. If the picture angle changes, the mask area will need to be changed mannually.
+2. The lane line annotations seem shaky in the video. The position and slope change from frame to frame. I have tried different ways to reduce the changes: use mean of the slopes of the line segements, or use median value, or add different weights to different line segments (the longer its slope weights the more)... For the final result I submitted, I chose to use average of coordinates of start points and end points of the segments, to get a start point and end point, then extend it to a full length in the mask area. 
+3. There are noise segments. I tried to limit the area and slope range to reduce the noise, for example, for the left lane, only segments on the left (x1, x2 < (picture width / 2 + 20)) and slope in range (-1, -0.6) would be used to draw the full lane.
 
-## Improvement suggested by Nov05
+## Possible improvement suggested by Nov05
+1. I might be able to use the position and slope from the last frame to adjust both in the current frame, to reduce the shakiness of the annotaions.
+2. The pipeline doesn't work well in processing the challenging video, in which the lanes bent more, and there are more dynamics of the lane lines.
