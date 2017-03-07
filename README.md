@@ -70,8 +70,10 @@ A browser window will appear showing the contents of the current directory.  Cli
 
 ### There are 3 stages to build the pipeline:
 1. lane_detection() - make sure the lane lines can be detected and marked with line segments.
+
 <img src="test_images/solidWhiteCurve_01.jpg" width="480" alt="Image - Lane Detection"/>
 2. lane_drawing() - change the draw_lines() to draw_lines_average(), in which the line segments are averaged/extrapolated to map out the full extent of the lanes. In this step, I used position and slope to differenciate the segments into two groups: one for the left lane, the other for the right lane. If the start point and the end point's x-coordiates are less than (picture width/2 + 20), the slope is in range (-1, -0.6), the segment belongs to the left lane; if the start point and the end point's x-coordinates are larger than (picture width/2 - 20), the slope is in range (0.5, 1), the segment belongs to the right lane.
+
 <img src="test_images/solidWhiteCurve_02.jpg" width="480" alt="Image - Lane Drawing"/>
 3. Improve the draw_lines_average() function to get better results.
 
@@ -84,4 +86,4 @@ A browser window will appear showing the contents of the current directory.  Cli
 
 ## Possible improvement suggested by Nov05
 1. I might be able to use the position and slope from the last frame to adjust both in the current frame, to reduce the shakiness of the annotaions.
-2. The pipeline doesn't work well in processing the challenging video, in which the lanes bent more, and there are more dynamics of the lane lines.
+2. The pipeline doesn't work well in some frames of the challenging video, in which the lanes bent more, and there are more dynamics of the lane lines. I might need to tune the parameters to get a better result.
